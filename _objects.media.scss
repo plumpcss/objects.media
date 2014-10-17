@@ -90,8 +90,11 @@ $plump-media-collapse-at:           250px !default;
                     margin-right: 0;
                     margin-left: $plump-media-gutter--small;
                 }
+
             }
+
         }
+
     }
 
 }
@@ -127,9 +130,13 @@ $plump-media-collapse-at:           250px !default;
                     @include media-query(palm) {
                     	margin: 0 auto;
                     }
+
                 }
+
             }
+
         }
+
     }
 
 }
@@ -158,7 +165,9 @@ $plump-media-collapse-at:           250px !default;
             	margin: 0 auto;
             	display: block;
             }
+
         }
+
     }
 
 }
@@ -181,6 +190,7 @@ $plump-media-collapse-at:           250px !default;
             margin-right: 0;
             margin-left: 0;
         }
+
     }
 
 }
@@ -197,6 +207,7 @@ $plump-media-collapse-at:           250px !default;
     	& .media__body {
     		min-width: $plump-media-collapse-at;
     	}
+        
     }
 
 }
