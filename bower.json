@@ -1,0 +1,17 @@
+{
+  "name": "plumpcss-media",
+  "version": "0.1.0",
+  "authors": [
+    "James Martin-Davies <jamesmd@plumpdigital.co.uk>"
+  ],
+  "description": "Place any image and text-like content side-by-side.",
+  "main": "_objects.media.scss",
+  "keywords": [
+    "plumpcss",
+    "oocss",
+    "css",
+    "object"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.plumpdigital.co.uk/"
+}
