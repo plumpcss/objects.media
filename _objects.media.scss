@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #MEDIA
+	#MEDIA
 \*------------------------------------*/
 
 /**
@@ -7,137 +7,206 @@
  *    stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
-// Predefine the variables below in order to alter and enable specific features.
-$plump-media-gutter:                $plump-base-spacing-unit !default;
-$plump-media-gutter--small:         halve($plump-media-gutter) !default;
-$plump-media-gutter--large:         double($plump-media-gutter) !default;
+//    Predefine the variables below in order to alter and enable specific features.
+$plump-media-namespace:             $plump-namespace !default;
 
+$plump-media-gutter:                $plump-base-spacing-unit !default;
+$plump-media-gutter--tiny:            quarter($plump-media-gutter) !default;
+$plump-media-gutter--small:             halve($plump-media-gutter) !default;
+$plump-media-gutter--large:            double($plump-media-gutter) !default;
+$plump-media-gutter--huge:          quadruple($plump-media-gutter) !default;
+
+$plump-enable-media--tiny:          false !default;
 $plump-enable-media--small:         false !default;
 $plump-enable-media--large:         false !default;
+$plump-enable-media--huge:          false !default;
 $plump-enable-media--rev:           false !default;
 $plump-enable-media--flush:         false !default;
-$plump-enable-media--stacked:       false !default;
-
+$plump-enable-media--responsive:    false !default;
 $plump-media-collapse-at:           250px !default;
 
 
 
 
 
-.#{$plump-namespace}media,
-%#{$plump-namespace}media {
-    @extend %clearfix;
-    display: block;
+.#{$plump-media-namespace}media,
+%#{$plump-media-namespace}media {
+	@extend %clearfix;
+	display: block;
 }
 
-    .#{$plump-namespace}media__img,
-    %#{$plump-namespace}media__img {
-        float: left;
-        margin-right: $plump-media-gutter;
+	.#{$plump-media-namespace}media__img,
+	%#{$plump-media-namespace}media__img {
+		float: left;
+		margin-right: $plump-media-gutter;
 
-        @include media-query(palm) {
-        	float: none;
-        	margin: 0 auto;
-        }
+		> img {
+			display: block;
+		}
 
-        > img {
-            display: block;
-        }
+	}
 
-    }
+	.#{$plump-media-namespace}media__body,
+	%#{$plump-media-namespace}media__body {
+		overflow: hidden;
+		display: block;
 
-    .#{$plump-namespace}media__body,
-    %#{$plump-namespace}media__body {
-        display: block;
-        overflow: hidden;
+		&,
+		> :last-child {
+			margin-bottom: 0;
+		}
 
-        &,
-        > :last-child {
-            margin-bottom: 0;
-        }
-
-    }
+	}
 
 
 
 
+
+@if ($plump-enable-media--tiny == true) {
+
+	/**
+	 *    Tiny media objects.
+	 */
+
+	.#{$plump-media-namespace}media--tiny,
+	%#{$plump-media-namespace}media--tiny {
+
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			margin-right: $plump-media-gutter--tiny;
+		}
+
+		@if ($plump-enable-media--rev == true) {
+
+			/**
+			 *    Tiny reversed media objects.
+			 */
+
+			&.#{$plump-media-namespace}media--rev,
+			&%#{$plump-media-namespace}media--rev {
+
+				> .#{$plump-media-namespace}media__img,
+				> %#{$plump-media-namespace}media__img {
+					margin-right: 0;
+					margin-left:  $plump-media-gutter--tiny;
+				}
+
+			}
+
+		}
+
+	}
+
+}
 
 @if ($plump-enable-media--small == true) {
 
-    /**
-     *    Small media objects.
-     */
+	/**
+	 *    Small media objects.
+	 */
 
-    .#{$plump-namespace}media--small,
-    %#{$plump-namespace}media--small {
+	.#{$plump-media-namespace}media--small,
+	%#{$plump-media-namespace}media--small {
 
-        > .#{$plump-namespace}media__img,
-        > %#{$plump-namespace}media__img {
-            margin-right: $plump-media-gutter--small;
-        }
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			margin-right: $plump-media-gutter--small;
+		}
 
-        @if ($plump-enable-media--rev == true) {
+		@if ($plump-enable-media--rev == true) {
 
-            /**
-             *    Small reversed media objects.
-             */
+			/**
+			 *    Small reversed media objects.
+			 */
 
-            &.#{$plump-namespace}media--rev,
-            &%#{$plump-namespace}media--rev {
+			&.#{$plump-media-namespace}media--rev,
+			&%#{$plump-media-namespace}media--rev {
 
-                > .#{$plump-namespace}media__img,
-                > %#{$plump-namespace}media__img {
-                    margin-right: 0;
-                    margin-left: $plump-media-gutter--small;
-                }
+				> .#{$plump-media-namespace}media__img,
+				> %#{$plump-media-namespace}media__img {
+					margin-right: 0;
+					margin-left:  $plump-media-gutter--small;
+				}
 
-            }
+			}
 
-        }
+		}
 
-    }
+	}
 
 }
 
 @if ($plump-enable-media--large == true) {
 
-    /**
-     *    Large media objects.
-     */
+	/**
+	 *    Large media objects.
+	 */
 
-    .#{$plump-namespace}media--large,
-    %#{$plump-namespace}media--large {
+	.#{$plump-media-namespace}media--large,
+	%#{$plump-media-namespace}media--large {
 
-        > .#{$plump-namespace}media__img,
-        > %#{$plump-namespace}media__img {
-            margin-right: $plump-media-gutter--large;
-        }
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			margin-right: $plump-media-gutter--large;
+		}
 
-        @if ($plump-enable-media--rev == true) {
+		@if ($plump-enable-media--rev == true) {
 
-            /**
-             *    Large reversed media objects.
-             */
+			/**
+			 *    Large reversed media objects.
+			 */
 
-            &.#{$plump-namespace}media--rev,
-            &%#{$plump-namespace}media--rev {
+			&.#{$plump-media-namespace}media--rev,
+			&%#{$plump-media-namespace}media--rev {
 
-                > .media__img,
-                > %media__img {
-                    margin-right: 0;
-                    margin-left: $plump-media-gutter--large;
+				> .media__img,
+				> %media__img {
+					margin-right: 0;
+					margin-left:  $plump-media-gutter--large;
+				}
 
-                    @include media-query(palm) {
-                    	margin: 0 auto;
-                    }
+			}
 
-                }
+		}
 
-            }
+	}
 
-        }
+}
 
-    }
+@if ($plump-enable-media--huge == true) {
+
+	/**
+	 *    Huge media objects.
+	 */
+
+	.#{$plump-media-namespace}media--huge,
+	%#{$plump-media-namespace}media--huge {
+
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			margin-right: $plump-media-gutter--huge;
+		}
+
+		@if ($plump-enable-media--rev == true) {
+
+			/**
+			 *    Huge reversed media objects.
+			 */
+
+			&.#{$plump-media-namespace}media--rev,
+			&%#{$plump-media-namespace}media--rev {
+
+				> .media__img,
+				> %media__img {
+					margin-right: 0;
+					margin-left:  $plump-media-gutter--huge;
+				}
+
+			}
+
+		}
+
+	}
 
 }
 
@@ -147,28 +216,21 @@ $plump-media-collapse-at:           250px !default;
 
 @if ($plump-enable-media--rev == true) {
 
-    /**
-     *    Reversed image location (right instead of left). Extends `.media`.
-     */
+	/**
+	 *    Reversed image location (right instead of left). Extends `.media`.
+	 */
 
-    .#{$plump-namespace}media--rev,
-    %#{$plump-namespace}media--rev {
+	.#{$plump-media-namespace}media--rev,
+	%#{$plump-media-namespace}media--rev {
 
-        > .#{$plump-namespace}media__img,
-        > %#{$plump-namespace}media__img {
-            float: right;
-            margin-right: 0;
-            margin-left: $plump-media-gutter;
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			float: right;
+			margin-right: 0;
+			margin-left: $plump-media-gutter;
+		}
 
-            @include media-query(palm) {
-            	float: none;
-            	margin: 0 auto;
-            	display: block;
-            }
-
-        }
-
-    }
+	}
 
 }
 
@@ -178,36 +240,53 @@ $plump-media-collapse-at:           250px !default;
 
 @if ($plump-enable-media--flush == true) {
 
-    /**
-     *    Flush media objects have no space between the image- and text-content.
-     */
+	/**
+	 *    Flush media objects have no space between the image- and text-content.
+	 */
 
-    .#{$plump-namespace}media--flush,
-    %#{$plump-namespace}media--flush {
+	.#{$plump-media-namespace}media--flush,
+	%#{$plump-media-namespace}media--flush {
 
-        > .#{$plump-namespace}media__img,
-        > %#{$plump-namespace}media__img {
-            margin-right: 0;
-            margin-left: 0;
-        }
+		> .#{$plump-media-namespace}media__img,
+		> %#{$plump-media-namespace}media__img {
+			margin-right: 0;
+			margin-left:  0;
+		}
 
-    }
+	}
 
 }
 
 
 
 
-
+/**
+ *    Responsive media objects.
+ *
+ *    There is a very pragmatic, simple implementation of a responsive
+ *    media object, which simply places the text-content beneath the
+ *    image-content.
+ *
+ *    We use a `min-width` on `media__body`, not a `max-width` media query
+ *    (inuitcss) because:
+ *
+ *    a) it is the least verbose method in terms of amount of code
+ *       required.
+ *    b) the media object’s default state is image-next-to-text, so its
+ *       stacked state is the exception, rather than the rule.
+ *    c) we choose to stack when the text measure become uncomfortably
+ *       narrow, not on an arbitrary breakpoint. This gives the flexibility
+ *       to still use inuitcss’s responsive layout to switch layout.
+ */
 @if ($plump-enable-media--stacked == true) {
 
-    .#{$plump-namespace}media--stacked,
-    %#{$plump-namespace}media--stacked {
+	.#{$plump-namespace}media--stacked,
+	%#{$plump-namespace}media--stacked {
 
-    	& .media__body {
-    		min-width: $plump-media-collapse-at;
-    	}
-        
-    }
+		& .media__body {
+			min-width: $plump-media-collapse-at;
+		}
+
+	}
 
 }
