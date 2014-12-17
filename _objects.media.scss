@@ -283,7 +283,7 @@ $plump-media-collapse-at:           250px !default;
 	.#{$plump-namespace}media--stacked,
 	%#{$plump-namespace}media--stacked {
 
-		& .media__body {
+		.media__body {
 			min-width: $plump-media-collapse-at;
 		}
 
