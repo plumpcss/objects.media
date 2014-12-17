@@ -4,14 +4,14 @@ The plumpcss `media` allows you to place any image and text-like content side-by
 
 The Media object module is based on inuitcss’ implementation of [Nicole
 Sullivan](https://twitter.com/stubbornella)’s <cite>media object</cite>—the
-poster child of OOCSS. It diverges on the responsive implementation.
+poster child of OOCSS. It diverges from inuitcss’ media object on the responsive implementation.
 
 To find out where it all started, read [Nicole’s blog
 post](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/).
 
 ## Dependencies
 
-inuitcss’ Media object depends on three other inuitcss modules:
+Plumpcss’ Media object depends on three other modules:
 
 * [settings.plumpcss-defaults](https://github.com/plumpcss/settings.defaults)
 * [tools.functions](https://github.com/inuitcss/tools.functions)
