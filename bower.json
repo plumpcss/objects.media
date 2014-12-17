@@ -1,23 +1,23 @@
 {
-  "name": "plumpcss-media",
-  "version": "0.2.0",
-  "authors": [
-  	"Jon Hurrell <jon@plumpdigital.co.uk">,
-    "James Martin-Davies <jamesmd@plumpdigital.co.uk>"
-  ],
-  "description": "Place any image and text-like content side-by-side.",
-  "main": "_objects.media.scss",
-  "keywords": [
-    "plumpcss",
-    "oocss",
-    "css",
-    "object",
-  ],
-  "dependencies": {
-     "plump-defaults": "~0.1.0",
-     "inuit-clearfix": "~0.2.0",
-     "inuit-functions": "~0.2.0"
-   },
-  "license": "MIT",
-  "homepage": "http://www.plumpdigital.co.uk/"
+	"name": "plumpcss-media",
+	"version": "0.2.0",
+	"authors": [
+		"Jon Hurrell <jon@plumpdigital.co.uk>",
+		"James Martin-Davies <jamesmd@plumpdigital.co.uk>"
+	],
+	"description": "Place any image and text-like content side-by-side.",
+	"main": "_objects.media.scss",
+	"keywords": [
+		"plumpcss",
+		"oocss",
+		"css",
+		"object",
+	],
+	"dependencies": {
+		"plump-defaults": "~0.1.0",
+		"inuit-clearfix": "~0.2.0",
+		"inuit-functions": "~0.2.0"
+	},
+	"license": "MIT",
+	"homepage": "http://www.plumpdigital.co.uk/"
 }
