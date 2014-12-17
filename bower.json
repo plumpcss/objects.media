@@ -11,7 +11,7 @@
 		"plumpcss",
 		"oocss",
 		"css",
-		"object",
+		"object"
 	],
 	"dependencies": {
 		"plump-defaults": "~0.1.0",
