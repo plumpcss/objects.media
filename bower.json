@@ -14,7 +14,7 @@
 		"object"
 	],
 	"dependencies": {
-		"plump-defaults": "~0.1.0",
+		"plumpcss-defaults": "~0.1.0",
 		"inuit-clearfix": "~0.2.0",
 		"inuit-functions": "~0.2.0"
 	},
